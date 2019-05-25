@@ -1,2 +1,2 @@
-# ai_midi
+# Colimo
 Generate MIDI 
