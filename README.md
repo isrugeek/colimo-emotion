@@ -1,5 +1,5 @@
 # Colimo
-<h1>Colimo is an Emotion Translator, It is the new communication method.</h1>
+<h3>Colimo is an Emotion Translator, It is the new communication method.</h3>
 # This project is under developement
 
 `We have local developemnt to train the model`
