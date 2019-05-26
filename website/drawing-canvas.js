@@ -97,7 +97,7 @@ window.onload = function () {
 
   saveButton.addEventListener('click', function() {
     var imageName = prompt('Please enter image name');
-    var canvasDataURL = canvas.toDataURL();
+    var canvasDataURL = canvas.toDataURL("images/imageName.png");
     var a = document.createElement('a');
     a.href = canvasDataURL;
     a.download = imageName || 'drawing';
