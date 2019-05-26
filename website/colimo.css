@@ -168,7 +168,8 @@ a {
 	position: absolute;
 	text-align: center;
 	top: 70%;
-	left: 40%;
+	width: 50%;
+    	margin: 0 25%;
 
 }
 h1.title {
