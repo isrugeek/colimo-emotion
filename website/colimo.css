@@ -1,0 +1,456 @@
+
+
+@charset "UTF-8";
+
+/* ------------------------------------------------ 1. HTML RESETS */
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+    height: 100%;
+}
+body#index {
+  background: url(images/colimo-bg.svg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: normal;
+    cursor: default;
+    min-height: 100%;
+}
+functions,
+sup {
+    display: none; 
+}
+section, div,
+object, button, table,
+del, dfn, ins, kbd, var,
+form, fieldset, figure, figcaption, caption,
+label, legend, output,
+samp, small, strike, sub,
+article, aside, details, summary, 
+footer, header, menu, nav {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+canvas { 
+   vertical-align: top;
+   padding: 10px 0;
+}
+select {
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
+fieldset {
+    border: none;
+    outline: 0;
+}
+figure {
+    transition: 0.4s all ease-in-out;
+    -ms-transition: 0.4s all ease-in-out;
+    -webkit-transition: 0.4s all ease-in-out;
+    -moz-transition: 0.4s all ease-in-out;
+    -o-transition: 0.4s all ease-in-out;
+}
+span {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+img {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: 0;
+} 
+iframe, 
+audio, 
+video,
+h1, h2, h3, h4, h5, h6,
+blockquote, pre, a,
+address, code, 
+strong, em, p {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+ul, li { 
+    list-style: none;
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    outline: 0;
+    border: none; 
+}
+input {
+    border: 0;
+    outline: 0;
+}
+textarea {
+    overflow: auto;
+    vertical-align: top; 
+    border: 0;
+    resize: none;
+    outline: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0; 
+}
+br {
+    display: block;
+    margin: 7px 0;
+    line-height: 22px;
+    content: " ";
+}
+a, 
+button,
+.btn {
+    transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+    border: none; 
+    outline: 0;
+}
+a {
+	font: 400 32px/25px 'Advent Pro', sans-serif;
+    text-decoration: none;
+    text-transform: none;
+    color: #28282d;
+    transition: 0.2s box-shadow ease-in-out;
+    -ms-transition: 0.2s box-shadow ease-in-out;
+    -webkit-transition: 0.2s box-shadow ease-in-out;
+    -moz-transition: 0.2s box-shadow ease-in-out;
+    -o-transition: 0.2s box-shadow ease-in-out;
+}
+    a:hover {
+        font: 400 40px/25px 'Advent Pro', sans-serif;
+    }
+.pace-done #page {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+    filter: alpha(opacity=1);
+    opacity: 1;
+}
+
+.clear-both {
+    clear: both;
+}
+
+#index audio {
+	position: absolute;
+	text-align: center;
+	top: 70%;
+	left: 40%;
+
+}
+h1.title {
+	position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+#str {
+    color: #000;
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    width: 100%;
+}
+#colimo-canvas #str {
+	top: 20px;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  display: : block;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  margin: 20px auto;
+}
+
+.left-block {
+  width: 100%;
+}
+
+.colors {
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.colors button {
+  display: inline-block;
+  border-radius: 100%;
+  outline: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px
+}
+
+.colors button:nth-of-type(1) {
+  background-color: #0000ff;
+}
+
+.colors button:nth-of-type(2) {
+  background-color: #009fff;
+}
+
+.colors button:nth-of-type(3) {
+  background-color: #0fffff;
+}
+
+.colors button:nth-of-type(4) {
+  background-color: #bfffff;
+}
+
+.colors button:nth-of-type(5) {
+  background-color: #000000;
+}
+
+.colors button:nth-of-type(6) {
+  background-color: #333333;
+}
+
+.colors button:nth-of-type(7) {
+  background-color: #666666;
+}
+
+.colors button:nth-of-type(8) {
+  background-color: #999999;
+}
+
+.colors button:nth-of-type(9) {
+  background-color: #ffcc66;
+}
+
+.colors button:nth-of-type(10) {
+  background-color: #ffcc00;
+}
+
+.colors button:nth-of-type(11) {
+  background-color: #ffff00;
+}
+
+.colors button:nth-of-type(12) {
+  background-color: #ffff99;
+}
+
+.colors button:nth-of-type(13) {
+  background-color: #003300;
+}
+
+.colors button:nth-of-type(14) {
+  background-color: #555000;
+}
+
+.colors button:nth-of-type(15) {
+  background-color: #00ff00;
+}
+
+.colors button:nth-of-type(16) {
+  background-color: #99ff99;
+}
+
+.colors button:nth-of-type(17) {
+  background-color: #f00000;
+}
+
+.colors button:nth-of-type(18) {
+  background-color: #ff6600;
+}
+
+.colors button:nth-of-type(19) {
+  background-color: #ff9933;
+}
+
+.colors button:nth-of-type(20) {
+  background-color: #f5deb3;
+}
+
+.colors button:nth-of-type(21) {
+  background-color: #330000;
+}
+
+.colors button:nth-of-type(22) {
+  background-color: #663300;
+}
+
+.colors button:nth-of-type(23) {
+  background-color: #cc6600;
+}
+
+.colors button:nth-of-type(24) {
+  background-color: #deb887;
+}
+
+.colors button:nth-of-type(25) {
+  background-color: #aa0fff;
+}
+
+.colors button:nth-of-type(26) {
+  background-color: #cc66cc;
+}
+
+.colors button:nth-of-type(27) {
+  background-color: #ff66ff;
+}
+
+.colors button:nth-of-type(28) {
+  background-color: #ff99ff;
+}
+
+.colors button:nth-of-type(29) {
+  background-color: #e8c4e8;
+}
+
+.colors button:nth-of-type(30) {
+  background-color: #ffffff;
+}
+
+.brushes {
+  //background-color: purple;
+  padding-top: 5px
+}
+
+.brushes button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background-color: #ece8e8;
+  margin-bottom: 5px;
+  padding: 5px;
+  height: 30px;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.brushes button:after {
+  height: 1px;
+  display: block;
+  background: #808080;
+  content: '';
+}
+
+.brushes button:nth-of-type(1):after {
+  height: 1px;
+}
+
+.brushes button:nth-of-type(2):after {
+  height: 2px;
+}
+
+.brushes button:nth-of-type(3):after {
+  height: 3px;
+}
+
+.brushes button:nth-of-type(4):after {
+  height: 4px;
+}
+
+.brushes button:nth-of-type(5):after {
+  height: 5px;
+}
+
+.buttons {
+  height: 80px;
+  padding-top: 10px;
+}
+
+.buttons button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.right-block {
+  width: 100%;
+}
+
+#paint-canvas {
+  cursor:crosshair;
+}
+
+
+.brushes, .buttons {
+	display: none;
+}
+
+
+
+
+
+
+
+#colimo-canvas #str-response {
+	color: #000;
+    display: : block;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+#response {
+    display: : block;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+	font: 400 20px/25px 'Advent Pro', sans-serif;
+    text-decoration: none;
+    text-transform: none;
+    color: #28282d;
+    transition: 0.2s box-shadow ease-in-out;
+    -ms-transition: 0.2s box-shadow ease-in-out;
+    -webkit-transition: 0.2s box-shadow ease-in-out;
+    -moz-transition: 0.2s box-shadow ease-in-out;
+    -o-transition: 0.2s box-shadow ease-in-out;
+
+}
+    #response:hover {
+        font: 400 25px/25px 'Advent Pro', sans-serif;
+    }
+
+
+
+
