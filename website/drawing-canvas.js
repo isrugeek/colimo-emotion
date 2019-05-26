@@ -8,7 +8,7 @@ str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running);
 var running = setTimeout(animate, 90);
 })();
 
-
+//take response
 document.getElementById('response').onclick = takeResponse;
 
 function takeResponse(){
@@ -23,7 +23,7 @@ function takeResponse(){
 }
 
 
-
+//Canvas
 window.onload = function () {
 
   // Definitions
