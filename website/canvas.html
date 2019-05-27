@@ -5,15 +5,22 @@
   <title>Colimo</title>
   <meta name="description" content="Emotional translator">
   <meta name="keywords" content="draw,sound,art,collaboration,translation,psychology">
-  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Lato" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Lato" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" /> 
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
   <link type="text/css" rel="stylesheet" href="colimo.css">
 </head>
 <body id="colimo-canvas">
+
+  <audio id="questionAudio" autoplay>
+    <source src="question.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+
     <div id="str"></div>
     <main>
       <div class="right-block">
-        <canvas id="paint-canvas" width="640" height="400"></canvas>
+        <canvas id="paint-canvas" width="500" height="500"></canvas>
       </div>
 
       <div class="left-block">
@@ -62,13 +69,23 @@
         </div>
       </div>
 
+
+
+
     </main>
 
 
+  <audio id="generatedAudio">
+    <source src="../test_output.wav" type="audio/wav">
+  Your browser does not support the audio element.
+  </audio>
 
 
-  <button id="response">></button>
+  <!--<button id="response">></button>-->
   <div id="str-response"></div>
-
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="drawing-canvas.js"></script>
+
+
+
 </body>

@@ -396,6 +396,7 @@ main {
 }
 
 .buttons button {
+  font-family: 'Advent Pro', sans-serif;
   display: block;
   width: 100%;
   border: 0;
@@ -403,14 +404,70 @@ main {
   outline: none;
   position: relative;
   cursor: pointer;
+  background: none;
 }
 
 .right-block {
-  width: 100%;
+  width: 50%;
+  padding: 20px 0;
+  margin: 20px 25%;
+  border-radius: 100%;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
 }
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+
+
+
+
+
+
+
 
 #paint-canvas {
   cursor:crosshair;
+  border-radius: 100%;
+  background-color: #fff;
+
 }
 
 

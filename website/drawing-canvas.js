@@ -1,19 +1,22 @@
 
+
+
 //text question animation
-var string = "What does it mean to have fun?";
+var string = "How does it look to have fun?";
 var str = string.split("");
 var el = document.getElementById('str');
 (function animate() {
 str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running); 
-var running = setTimeout(animate, 90);
+var running = setTimeout(animate, 25);
 })();
 
-//take response
-document.getElementById('response').onclick = takeResponse;
 
-function takeResponse(){
+
+//take response
+
+function takeResponse(response){
 	//text response animation
-	var stringResponse = "It seems boring to me.";
+	var stringResponse = response;
 	var strResponse = stringResponse.split("");
 	var el = document.getElementById('str-response');
 	(function animate() {
@@ -22,9 +25,23 @@ function takeResponse(){
 	})();
 }
 
+function deleteResponse () {
+    var el = document.getElementById('str-response');
+    console.log(el.innerHTML.length);
+    console.log(el.innerHTML);
+    if (el.innerHTML.length > 0) {
+      el.innerHTML = "";
+      console.log(el.innerHTML);
+    } 
+}
+
+
+
 
 //Canvas
 window.onload = function () {
+
+
 
   // Definitions
   var canvas = document.getElementById("paint-canvas");
@@ -58,9 +75,18 @@ window.onload = function () {
     setMouseCoordinates(event);
     isDrawing = true;
 
+    playAudio();
+
+    setTimeout(function(){ deleteResponse(); }, 5000 );
+
+    
+
     // Start Drawing
     context.beginPath();
-    context.moveTo(mouseX, mouseY);
+    context.moveTo(mouseX, mouseY); 
+
+
+
   });
 
   // Mouse Move Event
@@ -70,6 +96,7 @@ window.onload = function () {
     if(isDrawing){
       context.lineTo(mouseX, mouseY);
       context.stroke();
+
     }
   });
 
@@ -77,12 +104,26 @@ window.onload = function () {
   canvas.addEventListener('mouseup', function(event) {
     setMouseCoordinates(event);
     isDrawing = false;
+    pauseAudio();
+
+
+  var feelingArray = ["boring", "fun", "sad", "sexy", "surprising", "intelligent"];
+  var colorAray = ["#9372b1", "#fdcb00", "#2981c3", "#bc6562", "#0da3d2"];
+
+  var rand = feelingArray[Math.floor(Math.random() * feelingArray.length)];
+
+    setTimeout(function(){ takeResponse("Sounds " +rand); }, 5000);
+
+
+
+    
   });
 
   // Handle Mouse Coordinates
   function setMouseCoordinates(event) {
     mouseX = event.clientX - boundings.left;
     mouseY = event.clientY - boundings.top;
+
   }
 
   // Handle Clear Button
@@ -103,4 +144,27 @@ window.onload = function () {
     a.download = imageName || 'drawing';
     a.click();
   });
+
+
+  //Audio
+  var x = document.getElementById("generatedAudio"); 
+
+  function playAudio() { 
+    x.play(); 
+  } 
+  function pauseAudio() { 
+    x.pause(); 
+  } 
+
+
+  var y = document.getElementById("questionAudio");
+  
+
+
+
+
+
 };
+
+
+
